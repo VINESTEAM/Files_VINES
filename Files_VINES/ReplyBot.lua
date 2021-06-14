@@ -1,6 +1,6 @@
 local function Reply(msg)
 local text = msg.content_.text_
-if not database:get(bot_id..'rakon0:Reply:Mute'..msg.chat_id_) then
+if not database:get(bot_id..'VINESFile:Reply:Mute'..msg.chat_id_) then
 if text == 'هلو' then
 TextReply = '• هَٰہۧـﮧﮧلْٰاَٰوٍّ໑اَٰتّٰ 🌝☄ֆ'
 send(msg.chat_id_, msg.id_,'['..TextReply..']')
@@ -284,18 +284,18 @@ end
 end
 
 if text == 'تفعيل ردود البوت' and Owner(msg) then
-database:del(bot_id..'rakon0:Reply:Mute'..msg.chat_id_)
+database:del(bot_id..'VINESFile:Reply:Mute'..msg.chat_id_)
 send(msg.chat_id_, msg.id_,'☑┇تم تفعيل ردود البوت')
 return false
 end
 
 if text == 'تعطيل ردود البوت' and Owner(msg) then
-database:set(bot_id..'rakon0:Reply:Mute'..msg.chat_id_,true)
+database:set(bot_id..'VINESFile:Reply:Mute'..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_,'☑┇تم تعطيل ردود البوت')
 return false
 end
 
 end
 return {
-rakon0 = Reply
+VINESFile = Reply
 }
